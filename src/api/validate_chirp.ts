@@ -9,7 +9,7 @@ export async function handlerValidateChirp(req: Request, res: Response) {
   const params: parameters = req.body;
   const maxChirpLength = 140;
 
-  if (params.body.length > 140) {
+  if (params.body.length > maxChirpLength) {
     throw new BadRequestError(
       `Chirp is too long. Max length is ${maxChirpLength}`,
     );
